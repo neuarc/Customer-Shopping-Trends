@@ -6,6 +6,7 @@
 [![Pandas](https://img.shields.io/badge/Pandas-2.0+-orange.svg)](https://pandas.pydata.org/)
 [![Plotly](https://img.shields.io/badge/Plotly-5.0+-blue.svg)](https://plotly.com/)
 [![NeuArc AI](https://img.shields.io/badge/Powered%20By-NeuArc%20AI-black.svg)](https://neuarc.ai)
+[![Live Dashboard](https://img.shields.io/badge/Live%20Dashboard-Streamlit-green.svg)](https://customer-shopping-trends-neuarc-ai.streamlit.app/)
 
 ## 📊 Executive Overview
 
@@ -151,7 +152,11 @@ For a comprehensive deep-dive into the data processing pipeline, statistical jus
 
 ### Running the Interactive Dashboard
 
-Launch the production-ready Streamlit dashboard for real-time exploration:
+Access the production-ready Streamlit dashboard for real-time exploration:
+
+**🌐 [Live Dashboard Available Here](https://customer-shopping-trends-neuarc-ai.streamlit.app/)** - Click to explore the dashboard immediately!
+
+#### Local Deployment
 
 1. Start the application:
    ```bash
