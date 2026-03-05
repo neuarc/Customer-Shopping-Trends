@@ -179,6 +179,30 @@ Access the production-ready Streamlit dashboard for real-time exploration:
    - Compare segment performance across dimensions
    - Export visualizations and data for further analysis
 
+#### Dashboard Overview
+
+The **Consumer Dynamics & Market Performance Analytics** dashboard provides executive-level insights with the following features:
+
+**Key Metrics Displayed**:
+- 📊 **Transaction Revenue**: $233,081 (total portfolio value)
+- 💰 **Annual Portfolio Value**: $4,051,829 (projected annual revenue)
+- ⭐ **Brand Satisfaction**: 3.75/5.0 (average customer review rating)
+- 🎯 **VIP Penetration**: 9.8% (high-value customer concentration)
+
+**Dashboard Tabs**:
+1. **Market Velocity** - Revenue trends, transaction analysis, and growth metrics
+2. **Ecosystem & Logistics** - Shipping performance, fulfillment analysis, and delivery metrics
+3. **Segment Archetypes** - Customer segmentation breakdown (Loyal, Deal Hunters, Regular)
+4. **Demographic Yield** - Age group analysis, geographic distribution, and revenue patterns
+
+**Interactive Capabilities**:
+- Real-time KPI tracking with drill-down analysis
+- Segment performance comparison and benchmarking
+- Geographic heat maps and regional performance analysis
+- Time-based filtering and temporal trend analysis
+- Dynamic data visualizations powered by Plotly
+- Professional custom styling built with Streamlit
+
 ## 📁 Project Structure
 
 ```
