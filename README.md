@@ -118,6 +118,13 @@ The analysis is based on the `shopping_trends.csv` dataset containing 3,900+ cus
    ```
 
 3. **Install required packages**:
+   
+   **Option A: Install from requirements file** (recommended):
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   **Option B: Install packages individually**:
    ```bash
    pip install streamlit pandas numpy plotly seaborn matplotlib jupyter ipython
    ```
