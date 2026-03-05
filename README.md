@@ -288,6 +288,8 @@ Contributions, suggestions, and collaborative improvements are welcome. Please f
 **Adel** | AI Engineer, **NeuArc AI** 
 Specializing in Intelligent Systems and AI-Driven Data Strategies for Enterprise Solutions
 
+📧 **Email**: [neuarc.ai@gmail.com](mailto:neuarc.ai@gmail.com)
+
 *Transforming raw data into your business's most strategic asset.*
 
 ---
