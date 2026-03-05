@@ -5,8 +5,8 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-red.svg)](https://streamlit.io/)
 [![Pandas](https://img.shields.io/badge/Pandas-2.0+-orange.svg)](https://pandas.pydata.org/)
 [![Plotly](https://img.shields.io/badge/Plotly-5.0+-blue.svg)](https://plotly.com/)
-[![NeuArc AI](https://img.shields.io/badge/Powered%20By-NeuArc%20AI-black.svg)](https://neuarc.ai)
 [![Live Dashboard](https://img.shields.io/badge/Live%20Dashboard-Streamlit-green.svg)](https://customer-shopping-trends-neuarc-ai.streamlit.app/)
+[![NeuArc AI](https://img.shields.io/badge/Powered%20By-NeuArc%20AI-black.svg)](https://neuarc.ai)
 
 ## 📊 Executive Overview
 
