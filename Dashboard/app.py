@@ -294,11 +294,13 @@ def apply_chart_style(fig, height=CHART_H, showscale=False, legend_h=False):
 # ── DATA ENGINE ───────────────────────────────────────────────────────────────
 @st.cache_data
 def load_and_process_data():
-    data_path = Path(
-        r"D:\FAI\Work\Start Up\Projects\Data Analysis"
-        r"\shopping_trends.csv"
-    )
+    data_path = Path(__file__).parent.parent / "shopping_trends.csv"
+    
+    if not data_path.exists():
+        data_path = Path("shopping_trends.csv")
+        
     df = pd.read_csv(data_path)
+    return df
 
     freq_values = {
         "Weekly": 52, "Fortnightly": 26, "Bi-Weekly": 26,
