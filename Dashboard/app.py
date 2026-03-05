@@ -300,7 +300,6 @@ def load_and_process_data():
         data_path = Path("shopping_trends.csv")
         
     df = pd.read_csv(data_path)
-    return df
 
     freq_values = {
         "Weekly": 52, "Fortnightly": 26, "Bi-Weekly": 26,
