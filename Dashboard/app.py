@@ -291,13 +291,12 @@ def apply_chart_style(fig, height=CHART_H, showscale=False, legend_h=False):
     fig.update_traces(marker_line_width=0)
     return fig
 
-
 # ── DATA ENGINE ───────────────────────────────────────────────────────────────
 @st.cache_data
 def load_and_process_data():
     data_path = Path(
-        r"C:\Users\dell\DEPI_ONL4_AIS2_S2\DEPI_ONL4_AIS2_S2_ML"
-        r"\Data_Analysis_Course\Projects\Customer Shopping Trends\shopping_trends.csv"
+        r"D:\FAI\Work\Start Up\Projects\Data Analysis"
+        r"\shopping_trends.csv"
     )
     df = pd.read_csv(data_path)
 
