@@ -14,26 +14,24 @@ st.set_page_config(
 )
 
 # ── DESIGN TOKENS ─────────────────────────────────────────────────────────────
-SIDEBAR_BG  = "#FFFFFF"   # clean white sidebar
-ACCENT      = "#DC2626"   # enterprise red
-ACCENT_DARK = "#991B1B"
-ACCENT_SOFT = "#FEF2F2"
-BG          = "#F9FAFB"   # near-white page
-CARD_BG     = "#FFFFFF"
-BORDER      = "#E5E7EB"
-BORDER_MED  = "#D1D5DB"
-TEXT_PRI    = "#111827"
-TEXT_SEC    = "#6B7280"
-TEXT_MUTED  = "#9CA3AF"
+SIDEBAR_BG  = "#0F172A"   # Deep slate navy
+ACCENT      = "#22D3EE"   # Electric cyan (from logo highlights)
+ACCENT_DARK = "#0891B2"
+ACCENT_SOFT = "rgba(34, 211, 238, 0.1)"
+BG          = "#020617"   # Near-black background
+CARD_BG     = "#1E293B"   # Darker slate for cards
+BORDER      = "#334155"
+TEXT_PRI    = "#F8FAFC"
+TEXT_SEC    = "#94A3B8"
 CHART_H     = 400
 
 # ── GLOBAL CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mincgroma:wght@300;400;500;600;700;800&display=swap');
 
 html, body, [class*="css"], .stApp {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: 'Mincgroma', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
 /* ── SIDEBAR ── */
@@ -63,18 +61,18 @@ html, body, [class*="css"], .stApp {
 
 /* ── MAIN PAGE ── */
 [data-testid="stAppViewContainer"] {
-    background-color: #F9FAFB !important;
+    background-color: #020617 !important;
 }
 [data-testid="stHeader"] {
-    background-color: #FFFFFF !important;
-    border-bottom: 1px solid #E5E7EB !important;
+    background-color: #1E293B !important;
+    border-bottom: 1px solid #334155 !important;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
 }
 
 /* ── KPI METRIC CARDS ── */
 div[data-testid="stMetric"] {
-    background: #FFFFFF;
-    border: 1px solid #E5E7EB;
+    background: #1E293B;
+    border: 1px solid #334155;
     border-radius: 12px;
     padding: 20px 24px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
@@ -86,12 +84,12 @@ div[data-testid="stMetric"]::before {
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: #DC2626;
+    background: #22D3EE;
 }
 [data-testid="stMetricLabel"] p {
     font-size: 0.72rem !important;
     font-weight: 600 !important;
-    color: #6B7280 !important;
+    color: #94A3B8 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.6px !important;
     margin-bottom: 6px !important;
@@ -99,7 +97,7 @@ div[data-testid="stMetric"]::before {
 [data-testid="stMetricValue"] {
     font-size: 1.75rem !important;
     font-weight: 800 !important;
-    color: #111827 !important;
+    color: #F8FAFC !important;
     line-height: 1.1 !important;
 }
 [data-testid="stMetricDelta"] {
@@ -138,10 +136,10 @@ div[data-testid="stMetric"]::before {
 .chapter-header {
     font-size: 1.35rem;
     font-weight: 700;
-    color: #111827;
+    color: #F8FAFC;
     margin: 0 0 20px 0;
     padding: 0 0 14px 0;
-    border-bottom: 2px solid #F3F4F6;
+    border-bottom: 2px solid #334155;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -151,7 +149,7 @@ div[data-testid="stMetric"]::before {
     display: inline-block;
     width: 4px;
     height: 22px;
-    background: #DC2626;
+    background: #22D3EE;
     border-radius: 2px;
     flex-shrink: 0;
 }
@@ -170,12 +168,12 @@ div[data-testid="stMetric"]::before {
 .section-title {
     font-size: 0.78rem;
     font-weight: 700;
-    color: #6B7280;
+    color: #94A3B8;
     text-transform: uppercase;
     letter-spacing: 0.7px;
     margin-bottom: 12px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #F3F4F6;
+    border-bottom: 1px solid #334155;
 }
 
 /* ── OBSERVATION BOX ── */
@@ -663,7 +661,6 @@ with col_btn2:
                 
                 if response.status_code == 200:
                     st.success("Automation triggered successfully! Messages are being sent to customers.")
-                    st.balloons()  # Visual effect for the presentation
                 else:
                     st.error(f"Connection error occurred! Status Code: {response.status_code}")
                     
