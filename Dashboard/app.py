@@ -663,7 +663,6 @@ with col_btn2:
                 
                 if response.status_code == 200:
                     st.success("Automation triggered successfully! Messages are being sent to customers.")
-                    st.balloons()  # Visual effect for the presentation
                 else:
                     st.error(f"Connection error occurred! Status Code: {response.status_code}")
                     
