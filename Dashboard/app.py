@@ -633,38 +633,37 @@ st.markdown("""
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# Create two columns to align buttons side by side
-col_btn1, col_btn2 = st.columns(2)
+# Action buttons in a vertical list
+st.markdown('<p class="section-title">Actions</p>', unsafe_allow_html=True)
 
-with col_btn1:
-    # Export Report button
-    csv = df.to_csv(index=False).encode("utf-8")
-    st.download_button(
-        label="Export Report", 
-        data=csv, 
-        file_name="consumer_dynamics_report.csv", 
-        mime="text/csv", 
-        use_container_width=True
-    )
+# Export Report button
+csv = df.to_csv(index=False).encode("utf-8")
+st.download_button(
+    label="📊 Export Report", 
+    data=csv, 
+    file_name="consumer_dynamics_report.csv", 
+    mime="text/csv", 
+    use_container_width=True
+)
 
-with col_btn2:
-    # n8n Automation trigger button
-    if st.button("Launch Automated Marketing Campaign (n8n)", type="primary", use_container_width=True):
-        
-        with st.spinner('Sending signal to n8n and triggering automation...'):
-            try:
-                # n8n webhook URL
-                webhook_url = "https://neuarc.app.n8n.cloud/webhook-test/f0990df9-99f1-4e6e-bd7d-07b1ac91f3c0"
+# n8n Automation trigger button
+if st.button("🚀 Launch Automated Marketing Campaign (n8n)", use_container_width=True):
+    
+    with st.spinner('Sending signal to n8n and triggering automation...'):
+        try:
+            # n8n webhook URL
+            webhook_url = "https://neuarc.app.n8n.cloud/webhook-test/f0990df9-99f1-4e6e-bd7d-07b1ac91f3c0"
+            
+            # Send trigger request
+            payload = {"customers": df.sample(2).to_dict(orient="records")}
+
+            response = requests.post(webhook_url, json=payload)
+            
+            if response.status_code == 200:
+                st.success("Automation triggered successfully! Messages are being sent to customers.")
+                st.balloons()  # Visual effect for the presentation
+            else:
+                st.error(f"Connection error occurred! Status Code: {response.status_code}")
                 
-                # Send trigger request
-                payload = {"customers": df.sample(2).to_dict(orient="records")}
-
-                response = requests.post(webhook_url, json=payload)
-                
-                if response.status_code == 200:
-                    st.success("Automation triggered successfully! Messages are being sent to customers.")
-                else:
-                    st.error(f"Connection error occurred! Status Code: {response.status_code}")
-                    
-            except Exception as e:
-                st.error(f"Error: {e}")
+        except Exception as e:
+            st.error(f"Error: {e}")
