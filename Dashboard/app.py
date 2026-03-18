@@ -654,7 +654,7 @@ with col_btn2:
         with st.spinner('Sending signal to n8n and triggering automation...'):
             try:
                 # n8n webhook URL
-                webhook_url = "https://neuarc.app.n8n.cloud/webhook/f0990df9-99f1-4e6e-bd7d-07b1ac91f3c0"
+                webhook_url = "https://neuarc.app.n8n.cloud/webhook-test/f0990df9-99f1-4e6e-bd7d-07b1ac91f3c0"
                 
                 # Send trigger request
                 payload = {"customers": df.head(5).to_dict(orient="records")}
