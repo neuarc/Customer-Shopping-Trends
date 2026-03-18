@@ -647,9 +647,9 @@ st.download_button(
 )
 
 # n8n Automation trigger button
-if st.button("🚀 Launch Automated Marketing Campaign (n8n)", use_container_width=True):
+if st.button("🚀 Launch Automated Marketing Campaign", use_container_width=True):
     
-    with st.spinner('Sending signal to n8n and triggering automation...'):
+    with st.spinner('Sending signal and triggering automation...'):
         try:
             # n8n webhook URL
             webhook_url = "https://neuarc.app.n8n.cloud/webhook-test/f0990df9-99f1-4e6e-bd7d-07b1ac91f3c0"
