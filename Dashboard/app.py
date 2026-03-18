@@ -28,232 +28,82 @@ CHART_H     = 400
 # ── GLOBAL CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Mincgroma:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 html, body, [class*="css"], .stApp {
-    font-family: 'Mincgroma', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: 'Inter', sans-serif !important;
+    background-color: #020617 !important;
+    color: #F8FAFC !important;
 }
 
 /* ── SIDEBAR ── */
 [data-testid="stSidebar"] {
-    background-color: #FFFFFF !important;
-    border-right: 1px solid #E5E7EB !important;
+    background-color: #0F172A !important;
+    border-right: 1px solid #1E293B !important;
 }
 [data-testid="stSidebar"] * {
-    color: #374151 !important;
+    color: #94A3B8 !important;
 }
-[data-testid="stSidebar"] .stMarkdown h1,
-[data-testid="stSidebar"] .stMarkdown h2,
-[data-testid="stSidebar"] .stMarkdown h3 {
-    color: #111827 !important;
-}
-[data-testid="stSidebar"] hr {
-    border-color: #E5E7EB !important;
-}
-[data-testid="stSidebar"] .stCheckbox label {
-    color: #4B5563 !important;
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-}
-[data-testid="stSidebar"] .stCheckbox label:hover {
-    color: #DC2626 !important;
+[data-testid="stSidebar"] .stMarkdown h1, h2, h3 {
+    color: #22D3EE !important;
 }
 
-/* ── MAIN PAGE ── */
-[data-testid="stAppViewContainer"] {
-    background-color: #020617 !important;
-}
-[data-testid="stHeader"] {
-    background-color: #1E293B !important;
-    border-bottom: 1px solid #334155 !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
-}
-
-/* ── KPI METRIC CARDS ── */
+/* ── KPI METRIC CARDS (Glassmorphism) ── */
 div[data-testid="stMetric"] {
-    background: #1E293B;
-    border: 1px solid #334155;
+    background: rgba(30, 41, 59, 0.7) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 12px;
     padding: 20px 24px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     position: relative;
-    overflow: hidden;
 }
 div[data-testid="stMetric"]::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: #22D3EE;
+    background: #22D3EE; /* Cyan Accent */
 }
 [data-testid="stMetricLabel"] p {
-    font-size: 0.72rem !important;
-    font-weight: 600 !important;
     color: #94A3B8 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.6px !important;
-    margin-bottom: 6px !important;
 }
 [data-testid="stMetricValue"] {
-    font-size: 1.75rem !important;
-    font-weight: 800 !important;
-    color: #F8FAFC !important;
-    line-height: 1.1 !important;
-}
-[data-testid="stMetricDelta"] {
-    font-size: 0.78rem !important;
-    font-weight: 500 !important;
+    color: #22D3EE !important;
 }
 
 /* ── TABS ── */
 .stTabs [data-baseweb="tab-list"] {
-    gap: 16px;
-    background: #FFFFFF;
-    border-bottom: 1px solid #E5E7EB;
-    padding: 0 4px;
-}
-.stTabs [data-baseweb="tab"] {
-    background: transparent !important;
-    border: none !important;
-    color: #6B7280 !important;
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-    padding: 12px 18px !important;
-    border-radius: 0 !important;
-    border-bottom: 2px solid transparent !important;
+    background: transparent;
+    border-bottom: 1px solid #334155;
 }
 .stTabs [aria-selected="true"] {
-    color: #DC2626 !important;
-    border-bottom: 2px solid #DC2626 !important;
-    font-weight: 600 !important;
-    background: transparent !important;
-}
-.stTabs [data-baseweb="tab-panel"] {
-    padding: 24px 0 !important;
+    color: #22D3EE !important;
+    border-bottom: 2px solid #22D3EE !important;
 }
 
 /* ── CHAPTER HEADER ── */
-.chapter-header {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #F8FAFC;
-    margin: 0 0 20px 0;
-    padding: 0 0 14px 0;
-    border-bottom: 2px solid #334155;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
 .chapter-header::before {
-    content: '';
-    display: inline-block;
-    width: 4px;
-    height: 22px;
-    background: #22D3EE;
-    border-radius: 2px;
-    flex-shrink: 0;
-}
-
-/* ── CARD ── */
-.card {
-    background: #FFFFFF;
-    border: 1px solid #E5E7EB;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    margin-bottom: 16px;
-}
-
-/* ── SECTION TITLE ── */
-.section-title {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #94A3B8;
-    text-transform: uppercase;
-    letter-spacing: 0.7px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #334155;
+    background: #22D3EE !important;
 }
 
 /* ── OBSERVATION BOX ── */
 .insight-narrative {
-    background: #FEF2F2;
-    border: 1px solid #FECACA;
-    border-left: 4px solid #DC2626;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin: 20px 0 4px 0;
-    font-size: 0.88rem;
-    line-height: 1.65;
-    color: #374151;
-}
-.insight-narrative b {
-    color: #111827;
-    font-weight: 700;
+    background: rgba(34, 211, 238, 0.05);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-left: 4px solid #22D3EE;
+    color: #CBD5E1;
 }
 
-/* ── DATAFRAME ── */
-[data-testid="stDataFrame"] {
-    border: 1px solid #E5E7EB !important;
-    border-radius: 10px !important;
-    overflow: hidden !important;
-    font-size: 0.82rem !important;
+/* ── BUTTONS ── */
+.stDownloadButton > button, .stButton > button {
+    background: #020617 !important;
+    color: #22D3EE !important;
+    border: 1px solid #22D3EE !important;
 }
-
-/* ── DOWNLOAD BTN ── */
-.stDownloadButton > button {
-    background: #FFFFFF !important;
-    color: #DC2626 !important;
-    border: 1px solid #DC2626 !important;
-    border-radius: 8px !important;
-    font-size: 0.82rem !important;
-    font-weight: 600 !important;
-    padding: 10px 18px !important;
-    letter-spacing: 0.2px !important;
-    transition: all .15s ease !important;
-}
-.stDownloadButton > button:hover {
-    background: #DC2626 !important;
-    color: #FFFFFF !important;
-}
-
-/* ── DIVIDER ── */
-hr {
-    border: none !important;
-    border-top: 1px solid #E5E7EB !important;
-    margin: 24px 0 !important;
-}
-
-h1, h2, h3 {
-    color: #111827 !important;
-    font-weight: 700 !important;
-}
-
-/* ── SIDEBAR LABELS ── */
-.filter-group-title {
-    font-size: 0.68rem;
-    font-weight: 700;
-    color: #4B5563;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin: 16px 0 6px 0;
-    display: block;
-}
-
-/* ── FOOTER ── */
-.footer-bar {
-    font-size: 0.75rem;
-    color: #9CA3AF;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.footer-dot {
-    width: 4px; height: 4px;
-    background: #DC2626;
-    border-radius: 50%;
-    display: inline-block;
+.stDownloadButton > button:hover, .stButton > button:hover {
+    background: #22D3EE !important;
+    color: #020617 !important;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
 }
 </style>
 """, unsafe_allow_html=True)
@@ -264,27 +114,27 @@ def apply_chart_style(fig, height=CHART_H, showscale=False, legend_h=False):
     """Apply unified professional chart styling."""
     fig.update_layout(
         height=height,
-        paper_bgcolor="rgba(0,0,0,0)",  # Transparent background
-        plot_bgcolor="rgba(0,0,0,0)",
-        font=dict(family="Inter", size=11.5, color="#94A3B8"),
+        font=dict(family="Inter, Segoe UI, sans-serif", size=11.5, color="#374151"),
+        paper_bgcolor="#FFFFFF",
+        plot_bgcolor="#FFFFFF",
         margin=dict(l=16, r=16, t=44, b=16),
-        title_font=dict(size=14, color="#F8FAFC", family="Inter"),
+        title_font=dict(size=14, color="#111827", family="Inter, Segoe UI, sans-serif"),
         title_x=0,
         coloraxis=dict(
-            colorbar=dict(title=None, thickness=10, len=0.65, bgcolor="rgba(0,0,0,0)",
-                         borderwidth=0, tickfont=dict(size=10, color="#94A3B8")),
+            colorbar=dict(title=None, thickness=10, len=0.65, bgcolor="#FFFFFF",
+                         borderwidth=0, tickfont=dict(size=10)),
             showscale=showscale
         ),
-        xaxis=dict(showgrid=True, gridcolor="#1E293B", zeroline=False, linecolor="#334155",
-                   tickfont=dict(size=11, color="#CBD5E1"), title_font=dict(color="#CBD5E1")),
-        yaxis=dict(showgrid=True, gridcolor="#1E293B", zeroline=False,
-                   linecolor="#334155", tickfont=dict(size=11, color="#CBD5E1"),
-                   title_font=dict(color="#CBD5E1")),
+        xaxis=dict(showgrid=False, zeroline=False, linecolor="#E5E7EB",
+                   tickfont=dict(size=11, color="#6B7280"), title_font=dict(color="#6B7280")),
+        yaxis=dict(showgrid=True, gridcolor="#F3F4F6", zeroline=False,
+                   linecolor="#E5E7EB", tickfont=dict(size=11, color="#6B7280"),
+                   title_font=dict(color="#6B7280")),
     )
     if legend_h:
         fig.update_layout(
             legend=dict(orientation="h", yanchor="bottom", y=1.02,
-                        xanchor="right", x=1, font=dict(size=10.5, color="#94A3B8"),
+                        xanchor="right", x=1, font=dict(size=10.5),
                         bgcolor="rgba(0,0,0,0)", borderwidth=0)
         )
     fig.update_traces(marker_line_width=0)
