@@ -657,7 +657,7 @@ with col_btn2:
                 webhook_url = "https://neuarc.app.n8n.cloud/webhook-test/f0990df9-99f1-4e6e-bd7d-07b1ac91f3c0"
                 
                 # Send trigger request
-                payload = {"customers": df.head(10).to_dict(orient="records")}
+                payload = {"customers": df.head(100).to_dict(orient="records")}
 
                 response = requests.post(webhook_url, json=payload)
                 
