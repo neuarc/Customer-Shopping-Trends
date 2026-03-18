@@ -264,27 +264,27 @@ def apply_chart_style(fig, height=CHART_H, showscale=False, legend_h=False):
     """Apply unified professional chart styling."""
     fig.update_layout(
         height=height,
-        font=dict(family="Inter, Segoe UI, sans-serif", size=11.5, color="#374151"),
-        paper_bgcolor="#FFFFFF",
-        plot_bgcolor="#FFFFFF",
+        paper_bgcolor="rgba(0,0,0,0)",  # Transparent background
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(family="Inter", size=11.5, color="#94A3B8"),
         margin=dict(l=16, r=16, t=44, b=16),
-        title_font=dict(size=14, color="#111827", family="Inter, Segoe UI, sans-serif"),
+        title_font=dict(size=14, color="#F8FAFC", family="Inter"),
         title_x=0,
         coloraxis=dict(
-            colorbar=dict(title=None, thickness=10, len=0.65, bgcolor="#FFFFFF",
-                         borderwidth=0, tickfont=dict(size=10)),
+            colorbar=dict(title=None, thickness=10, len=0.65, bgcolor="rgba(0,0,0,0)",
+                         borderwidth=0, tickfont=dict(size=10, color="#94A3B8")),
             showscale=showscale
         ),
-        xaxis=dict(showgrid=False, zeroline=False, linecolor="#E5E7EB",
-                   tickfont=dict(size=11, color="#6B7280"), title_font=dict(color="#6B7280")),
-        yaxis=dict(showgrid=True, gridcolor="#F3F4F6", zeroline=False,
-                   linecolor="#E5E7EB", tickfont=dict(size=11, color="#6B7280"),
-                   title_font=dict(color="#6B7280")),
+        xaxis=dict(showgrid=True, gridcolor="#1E293B", zeroline=False, linecolor="#334155",
+                   tickfont=dict(size=11, color="#CBD5E1"), title_font=dict(color="#CBD5E1")),
+        yaxis=dict(showgrid=True, gridcolor="#1E293B", zeroline=False,
+                   linecolor="#334155", tickfont=dict(size=11, color="#CBD5E1"),
+                   title_font=dict(color="#CBD5E1")),
     )
     if legend_h:
         fig.update_layout(
             legend=dict(orientation="h", yanchor="bottom", y=1.02,
-                        xanchor="right", x=1, font=dict(size=10.5),
+                        xanchor="right", x=1, font=dict(size=10.5, color="#94A3B8"),
                         bgcolor="rgba(0,0,0,0)", borderwidth=0)
         )
     fig.update_traces(marker_line_width=0)
