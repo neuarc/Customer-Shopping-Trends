@@ -4,6 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
 from pathlib import Path
+import requests
 
 # ── PAGE CONFIG ──────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -631,7 +632,38 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
-col_fl, col_fm, col_fr = st.columns([2, 1, 2])
-with col_fm:
+
+# Create two columns to align buttons side by side
+col_btn1, col_btn2 = st.columns(2)
+
+with col_btn1:
+    # Export Report button
     csv = df.to_csv(index=False).encode("utf-8")
-    st.download_button("Export Report", csv, "consumer_dynamics_report.csv", "text/csv", use_container_width=True)
+    st.download_button(
+        label="Export Report", 
+        data=csv, 
+        file_name="consumer_dynamics_report.csv", 
+        mime="text/csv", 
+        use_container_width=True
+    )
+
+with col_btn2:
+    # n8n Automation trigger button
+    if st.button("Launch Automated Marketing Campaign (n8n)", type="primary", use_container_width=True):
+        
+        with st.spinner('Sending signal to n8n and triggering automation...'):
+            try:
+                # n8n webhook URL
+                webhook_url = "https://neuarc.app.n8n.cloud/webhook-test/f0990df9-99f1-4e6e-bd7d-07b1ac91f3c0"
+                
+                # Send trigger request
+                response = requests.post(webhook_url)
+                
+                if response.status_code == 200:
+                    st.success("Automation triggered successfully! Messages are being sent to customers.")
+                    st.balloons()  # Visual effect for the presentation
+                else:
+                    st.error(f"Connection error occurred! Status Code: {response.status_code}")
+                    
+            except Exception as e:
+                st.error(f"Error: {e}")
